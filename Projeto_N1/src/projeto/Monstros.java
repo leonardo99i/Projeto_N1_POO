@@ -10,7 +10,7 @@ public class Monstros {
     private Golpes golpe_1;
     private Golpes golpe_2;
 
-    public Monstros(String nomeMonstro, String tipoElemento, int vida, int forca, int defesa, int valocidade, Golpes golpe_1, Golpes golpe_2){
+    public Monstros(String nomeMonstro, String tipoElemento, int vida, int forca, int defesa, int velocidade, Golpes golpe_1, Golpes golpe_2){
         this.nomeMonstro = nomeMonstro;
         this.tipoElemento = tipoElemento;
         this.vida = vida;
