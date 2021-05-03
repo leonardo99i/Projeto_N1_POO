@@ -60,13 +60,14 @@ public class Main {
         Rodada[] User_1 = new Rodada[2];
         Rodada[] User_2 = new Rodada[2];
 
+        
         do{
             System.out.println("Usuario 1: Menu de Escolha!!!");
             System.out.println("1 - Ataque");
             System.out.println("2 - Troca");
             int escolhaRodada = scanner.nextInt();
-            Rodada rodadaUser = new Rodada(nomes[escolhaRodada], elementos[escolhaRodada], vidas[escolhaRodada], forcas[escolhaRodada], defesas[escolhaRodada], velocidades[escolhaRodada], golpes[escolhaRodada], golpes[escolhaRodada+1], escolhaRodada);
-            User_1[checaMostro] = rodadaUser;
+            Rodada rodadaUser_1 = new Rodada(nomes[escolhaRodada], elementos[escolhaRodada], vidas[escolhaRodada], forcas[escolhaRodada], defesas[escolhaRodada], velocidades[escolhaRodada], golpes[escolhaRodada], golpes[escolhaRodada+1], escolhaRodada);
+            User_1[checaMostro] = rodadaUser_1;
         }while(checaMostro != 0);
 
         do{
@@ -74,14 +75,20 @@ public class Main {
             System.out.println("1 - Ataque");
             System.out.println("2 - Troca");
             int escolhaRodada = scanner.nextInt();
-            Rodada rodadaUser = new Rodada(nomes[escolhaRodada], elementos[escolhaRodada], vidas[escolhaRodada], forcas[escolhaRodada], defesas[escolhaRodada], velocidades[escolhaRodada], golpes[escolhaRodada], golpes[escolhaRodada+1], escolhaRodada);
-            User_2[checaMostro] = rodadaUser;
+            Rodada rodadaUser_2 = new Rodada(nomes[escolhaRodada], elementos[escolhaRodada], vidas[escolhaRodada], forcas[escolhaRodada], defesas[escolhaRodada], velocidades[escolhaRodada], golpes[escolhaRodada], golpes[escolhaRodada+1], escolhaRodada);
+            User_2[checaMostro] = rodadaUser_2;
         }while(checaMostro != 0);
         scanner.close();
 
-        int rodadaUser = 0;
-        System.out.println("User 1 escolheu: " + User_1[rodadaUser].toString());
 
-        System.out.println("User 2 escolheu: " + User_2[rodadaUser].toString());
+        int rodadaUser_1 = 0;
+        int rodadaUser_2 = 0;
+        System.out.println("User 1 escolheu: " + User_1[rodadaUser_1].toString());
+
+        System.out.println("User 2 escolheu: " + User_2[rodadaUser_2].toString());
+
+        if(rodadaUser_1 == 1 && rodadaUser_2 == 1){
+            
+        }
     }
 }
