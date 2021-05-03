@@ -60,7 +60,7 @@ public class Main {
         Rodada[] User_1 = new Rodada[2];
         Rodada[] User_2 = new Rodada[2];
 
-        
+        System.out.println("oi");
         do{
             System.out.println("Usuario 1: Menu de Escolha!!!");
             System.out.println("1 - Ataque");
