@@ -1,6 +1,6 @@
 ## About
 
-Projeto da N1 de Programação Orientada a Objetos 4º Semestre do curso de Ciência da Computação da Universidade Anhembi Morumbi. Desenvolvido pelos alunos Leonardo Ribeiro Leonardi e Laura de Oliveira Moreira.
+Projeto da N1 de Programação Orientada a Objetos 4º Semestre do curso de Ciência da Computação da Universidade Anhembi Morumbi.Desenvolvido pelos alunos Leonardo Ribeiro Leonardi e Laura de Oliveira Moreira.
 
 ## Folder Structure
 
