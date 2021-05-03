@@ -34,8 +34,8 @@ public class Main {
         while(escolha < 3){
             System.out.println("User 1: Digite o numero do teu pokemon: ");
             int monstro = scanner.nextInt();
-            Monstros monstroUser = new Monstros(nomes[monstro], elementos[monstro], vidas[monstro], forcas[monstro], defesas[monstro], velocidades[monstro], golpes[monstro], golpes[monstro+1]);
-            user1[escolha] = monstroUser;
+            Monstros monstroUser_1 = new Monstros(nomes[monstro], elementos[monstro], vidas[monstro], forcas[monstro], defesas[monstro], velocidades[monstro], golpes[monstro], golpes[monstro+1]);
+            user1[escolha] = monstroUser_1;
             escolha++;
         }
 
@@ -43,8 +43,8 @@ public class Main {
         while(escolha < 3){
             System.out.println("User 2: Digite o numero do teu pokemon: ");
             int monstro = scanner.nextInt();
-            Monstros monstroUser = new Monstros(nomes[monstro], elementos[monstro], vidas[monstro], forcas[monstro], defesas[monstro], velocidades[monstro], golpes[monstro], golpes[monstro+1]);
-            user2[escolha] = monstroUser;
+            Monstros monstroUser_2 = new Monstros(nomes[monstro], elementos[monstro], vidas[monstro], forcas[monstro], defesas[monstro], velocidades[monstro], golpes[monstro], golpes[monstro+1]);
+            user2[escolha] = monstroUser_2;
             escolha++;
         }
 
@@ -80,7 +80,6 @@ public class Main {
         }while(checaMostro != 0);
         scanner.close();
 
-
         int rodadaUser_1 = 0;
         int rodadaUser_2 = 0;
         System.out.println("User 1 escolheu: " + User_1[rodadaUser_1].toString());
@@ -89,6 +88,8 @@ public class Main {
 
         if(rodadaUser_1 == 1 && rodadaUser_2 == 1){
             
+
+
         }
     }
 }
