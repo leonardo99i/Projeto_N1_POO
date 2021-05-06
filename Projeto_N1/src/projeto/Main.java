@@ -11,7 +11,6 @@ public class Main {
         throw new UnsupportedOperationException("Not supported yet.");
     }
     public static void main(String[] args){
-
         Scanner scanner = new Scanner(System.in);
         String[] nomes = {"Alfredo", "Jorge", "Armando", "Inacio", "Carlos", "Miguel"};
         String[] elementos = {"Água", "Fogo", "Terra", "Ar", "Ar", "Fogo"};
