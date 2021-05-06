@@ -3,7 +3,14 @@ package projeto;
 import java.util.Scanner;
 
 public class Main {
-    public static void main(String[] args) {
+
+    public static final int OPCAO_SAIR = 0;
+    public static final int INICIAR_JOGO = 1;
+
+    private static void iniciarJogo(){
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+    public static void main(String[] args, String nextLine) {
 
         Scanner scanner = new Scanner(System.in);
         String[] nomes = {"Alfredo", "Jorge", "Armando", "Inacio", "Carlos", "Miguel"};
@@ -77,7 +84,7 @@ public class Main {
             Rodada rodadaUser_2 = new Rodada(nomes[escolhaRodada], elementos[escolhaRodada], vidas[escolhaRodada], forcas[escolhaRodada], defesas[escolhaRodada], velocidades[escolhaRodada], golpes[escolhaRodada], golpes[escolhaRodada+1], escolhaRodada);
             User_2[checaMostro] = rodadaUser_2;
         }while(checaMostro != 0);
-        scanner.close();
+        
 
         int rodadaUser_1 = 0;
         int rodadaUser_2 = 0;
@@ -85,10 +92,24 @@ public class Main {
 
         System.out.println("User 2 escolheu: " + User_2[rodadaUser_2].toString());
 
-        if(rodadaUser_1 == 1 && rodadaUser_2 == 1){
-            
+        int decisao;
+        do{
+            System.out.println("Digite 1 para começar o jogo ou 0 para sair ");
+            decisao = Integer.parseInt(scanner.nextLine());
 
-
-        }
+            switch(decisao){
+                case Main.OPCAO_SAIR:
+                    break;
+                
+                case Main.INICIAR_JOGO:
+                    iniciarJogo();
+                    break;
+                
+                default:
+                    System.out.println("Opção Invalida!");
+                    break;
+            }
+        }while(decisao != Main.OPCAO_SAIR);
+        scanner.close();
     }
 }
