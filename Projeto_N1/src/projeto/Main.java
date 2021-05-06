@@ -7,8 +7,39 @@ public class Main {
     public static final int OPCAO_SAIR = 0;
     public static final int INICIAR_JOGO = 1;
 
-    private static void iniciarJogo(){
-        throw new UnsupportedOperationException("Not supported yet.");
+    private static void iniciarJogo(String[] nomes, String[] elementos, int[] vidas, int[] forcas, int[] defesas, int[] velocidades, Golpes[] golpes){
+        int checaMostro = 0;
+        Rodada[] User_1 = new Rodada[2];
+        Rodada[] User_2 = new Rodada[2];
+
+        Scanner input = new Scanner(System.in);
+        do{
+            System.out.println("Usuario 1: Menu de Escolha!");
+            System.out.println("1 - Ataque");
+            System.out.println("2 - Troca");
+            int escolhaRodada = input.nextInt();
+            Rodada rodadaUser_1 = new Rodada(nomes[escolhaRodada], elementos[escolhaRodada], vidas[escolhaRodada], forcas[escolhaRodada], defesas[escolhaRodada], velocidades[escolhaRodada], golpes[escolhaRodada], golpes[escolhaRodada+1], escolhaRodada);
+            User_1[checaMostro] = rodadaUser_1;
+        }while(checaMostro != 0);
+
+        do{
+            System.out.println("Usuario 2: Menu de Escolha!!!");
+            System.out.println("1 - Ataque");
+            System.out.println("2 - Troca");
+            int escolhaRodada = input.nextInt();
+            Rodada rodadaUser_2 = new Rodada(nomes[escolhaRodada], elementos[escolhaRodada], vidas[escolhaRodada], forcas[escolhaRodada], defesas[escolhaRodada], velocidades[escolhaRodada], golpes[escolhaRodada], golpes[escolhaRodada+1], escolhaRodada);
+            User_2[checaMostro] = rodadaUser_2;
+        }while(checaMostro != 0);
+        input.close();
+
+        int rodadaUser_1 = 0;
+        int rodadaUser_2 = 0;
+        System.out.println("User 1 escolheu: " + User_1[rodadaUser_1].toString());
+        System.out.println("User 2 escolheu: " + User_2[rodadaUser_2].toString());
+
+        if(rodadaUser_1 == 1 && rodadaUser_2 == 1){
+            System.out.println("A batalha Começou!!!!");
+        }
     }
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
@@ -62,46 +93,17 @@ public class Main {
         System.out.println("User 2 escolheu: " + user2[1].toString());
         System.out.println("User 2 escolheu: " + user2[2].toString());
 
-        int checaMostro = 0;
-        Rodada[] User_1 = new Rodada[2];
-        Rodada[] User_2 = new Rodada[2];
-
-        do{
-            System.out.println("Usuario 1: Menu de Escolha!");
-            System.out.println("1 - Ataque");
-            System.out.println("2 - Troca");
-            int escolhaRodada = scanner.nextInt();
-            Rodada rodadaUser_1 = new Rodada(nomes[escolhaRodada], elementos[escolhaRodada], vidas[escolhaRodada], forcas[escolhaRodada], defesas[escolhaRodada], velocidades[escolhaRodada], golpes[escolhaRodada], golpes[escolhaRodada+1], escolhaRodada);
-            User_1[checaMostro] = rodadaUser_1;
-        }while(checaMostro != 0);
-
-        do{
-            System.out.println("Usuario 2: Menu de Escolha!!!");
-            System.out.println("1 - Ataque");
-            System.out.println("2 - Troca");
-            int escolhaRodada = scanner.nextInt();
-            Rodada rodadaUser_2 = new Rodada(nomes[escolhaRodada], elementos[escolhaRodada], vidas[escolhaRodada], forcas[escolhaRodada], defesas[escolhaRodada], velocidades[escolhaRodada], golpes[escolhaRodada], golpes[escolhaRodada+1], escolhaRodada);
-            User_2[checaMostro] = rodadaUser_2;
-        }while(checaMostro != 0);
-        
-
-        int rodadaUser_1 = 0;
-        int rodadaUser_2 = 0;
-        System.out.println("User 1 escolheu: " + User_1[rodadaUser_1].toString());
-
-        System.out.println("User 2 escolheu: " + User_2[rodadaUser_2].toString());
-
         int decisao;
         do{
-            System.out.println("Digite 1 para começar o jogo ou 0 para sair ");
-            decisao = Integer.parseInt(scanner.nextLine());
+            System.out.println("Digite a para começar o jogo ou b para sair ");
+            decisao = scanner.nextInt();
 
             switch(decisao){
                 case Main.OPCAO_SAIR:
                     break;
                 
                 case Main.INICIAR_JOGO:
-                    iniciarJogo();
+                    iniciarJogo(elementos, elementos, velocidades, velocidades, velocidades, velocidades, golpes);
                     break;
                 
                 default:
