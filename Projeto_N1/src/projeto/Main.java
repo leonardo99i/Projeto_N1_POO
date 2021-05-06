@@ -10,7 +10,7 @@ public class Main {
     private static void iniciarJogo(){
         throw new UnsupportedOperationException("Not supported yet.");
     }
-    public static void main(String[] args, String nextLine) {
+    public static void main(String[] args){
 
         Scanner scanner = new Scanner(System.in);
         String[] nomes = {"Alfredo", "Jorge", "Armando", "Inacio", "Carlos", "Miguel"};
