@@ -78,25 +78,26 @@ public class Main {
                     break;
             }
         }while(decisao != Main.OPCAO_SAIR);
+
         input.close();
+        
     }
 
     public static void iniciarJogo(Monstros[] user_1, Monstros[] user_2){
     
         Scanner scanner = new Scanner(System.in);
-        
-            System.out.println("User 1: Menu de Escolha!!:");
-            System.out.println("1- Ataque: ");
-            System.out.println("2 - Trocar");
-            int escolhaRodada_1 = scanner.nextInt();
-            System.out.println("User 1 - Escolheu: " + escolhaRodada_1);
+        System.out.println("User 1: Menu de Escolha!!:");
+        System.out.println("1- Ataque: ");
+        System.out.println("2 - Trocar");
+        int escolhaRodada_1 = scanner.nextInt();
+        System.out.println("User 1 - Escolheu: " + escolhaRodada_1);
 
-            System.out.println("User 2: Menu de Escolha!!:");
-            System.out.println("1- Ataque: ");
-            System.out.println("2 - Trocar");
-            int escolhaRodada_2 = scanner.nextInt();
-            System.out.println("User 2 - Escolheu: " + escolhaRodada_2);
-            scanner.close();
+        System.out.println("User 2: Menu de Escolha!!:");
+        System.out.println("1- Ataque: ");
+        System.out.println("2 - Trocar");
+        int escolhaRodada_2 = scanner.nextInt();
+        System.out.println("User 2 - Escolheu: " + escolhaRodada_2);
+        scanner.close();
 
         if(escolhaRodada_1 == 1 && escolhaRodada_2 == 1){
             System.out.println("A batalha começou:");
