@@ -25,6 +25,70 @@ public class Monstros {
 
     }
 
+    public String getNomeMonstro() {
+        return nomeMonstro;
+    }
+
+    public void setNomeMonstro(String nomeMonstro) {
+        this.nomeMonstro = nomeMonstro;
+    }
+
+    public String getTipoElemento() {
+        return tipoElemento;
+    }
+
+    public void setTipoElemento(String tipoElemento) {
+        this.tipoElemento = tipoElemento;
+    }
+
+    public int getVida() {
+        return vida;
+    }
+
+    public void setVida(int vida) {
+        this.vida = vida;
+    }
+
+    public int getForca() {
+        return forca;
+    }
+
+    public void setForca(int forca) {
+        this.forca = forca;
+    }
+
+    public int getDefesa() {
+        return defesa;
+    }
+
+    public void setDefesa(int defesa) {
+        this.defesa = defesa;
+    }
+
+    public int getVelocidade() {
+        return velocidade;
+    }
+
+    public void setVelocidade(int velocidade) {
+        this.velocidade = velocidade;
+    }
+
+    public Golpes getGolpe_1() {
+        return golpe_1;
+    }
+
+    public void setGolpe_1(Golpes golpe_1) {
+        this.golpe_1 = golpe_1;
+    }
+
+    public Golpes getGolpe_2() {
+        return golpe_2;
+    }
+
+    public void setGolpe_2(Golpes golpe_2) {
+        this.golpe_2 = golpe_2;
+    }
+
     boolean estaVivo(){
         if(this.vida <= 0){
             this.vida = 0;
@@ -39,13 +103,10 @@ public class Monstros {
 
     @Override
     public String toString() {
-        return "Monstro{" +
-                "nomeMonstro='" + nomeMonstro + "\n" +
-                ", tipoElemento='" + tipoElemento + "\n" +
-                ", vida=" + vida +
-                ", forca=" + forca +
-                ", defesa=" + defesa +
-                ", velocidade=" + velocidade + golpe_1.toString() + golpe_2.toString() +
-                '}';
-    } 
+        return "Monstro [defesa=" + defesa + ", forca=" + forca + ", golpe_1=" + golpe_1 + ", golpe_2=" + golpe_2
+                + ", nomeMonstro=" + nomeMonstro + ", tipoElemento=" + tipoElemento + ", velocidade=" + velocidade
+                + ", vida=" + vida + "]";
+    }
+
+    
 }
