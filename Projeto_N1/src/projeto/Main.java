@@ -7,7 +7,6 @@ public class Main {
     public static final int OPCAO_SAIR = 0;
     public static final int INICIAR_JOGO = 1;
     
-
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -72,7 +71,7 @@ public class Main {
                     break;
                 
                 case Main.INICIAR_JOGO:
-                    iniciarJogo(user_1, user_2);
+                    iniciarJogo(user_1, user_2, golpes);
                     break;
                 
                 default:
@@ -83,7 +82,7 @@ public class Main {
     }
     
         
-    public static void iniciarJogo(Monstros[] user_1, Monstros[] user_2){
+    public static void iniciarJogo(Monstros[] user_1, Monstros[] user_2, Golpes[] golpes){
         
         int i=0;
         int j=0;
@@ -114,8 +113,10 @@ public class Main {
         System.out.println("2- Golpe: " + user_2[j].getGolpe_2());
         int escolheGolpe_2 = scanner.nextInt();
         System.out.println("Escolheu o Golpe: " + escolheGolpe_2);
+        if(escolheGolpe_2 == 1){
+            
+        }
         
-
         int rodada_1;
         if(escolhaRodada_1 == 1 && escolhaRodada_2 == 1){
             if(user_1[i].getVelocidade() > user_2[j].getVelocidade()){
