@@ -6,6 +6,8 @@ public class Main {
     
     public static final int OPCAO_SAIR = 0;
     public static final int INICIAR_JOGO = 1;
+    
+
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
@@ -25,12 +27,12 @@ public class Main {
 
         Golpes[] golpes = {golpe_1, golpe_2, golpe_3, golpe_4, golpe_5, golpe_6, golpe_7, golpe_8, golpe_9, golpe_10, golpe_11, golpe_12};
 
-        Monstros monstro_1 = new Monstros("Alfredo", "Água", 45, 45, 45, 45, golpe_1, golpe_2);
-        Monstros monstro_2 = new Monstros("Jorge", "Fogo", 45, 45, 45, 45, golpe_3, golpe_4);
+        Monstros monstro_1 = new Monstros("Alfredo", "Água", 45, 45, 45, 90, golpe_1, golpe_2);
+        Monstros monstro_2 = new Monstros("Jorge", "Fogo", 45, 45, 45, 40, golpe_3, golpe_4);
         Monstros monstro_3 = new Monstros("Armando", "Terra", 45, 45, 45, 45, golpe_5, golpe_6);
-        Monstros monstro_4 = new Monstros("Inacio", "Ar", 45, 45, 45, 45, golpe_7, golpe_8);
-        Monstros monstro_5 = new Monstros("Carlos", "Ar", 45, 45, 45, 45, golpe_9, golpe_10);
-        Monstros monstro_6 = new Monstros("Miguel", "Fogo", 45, 45, 45, 45, golpe_11, golpe_12);
+        Monstros monstro_4 = new Monstros("Inacio", "Ar", 45, 45, 45, 60, golpe_7, golpe_8);
+        Monstros monstro_5 = new Monstros("Carlos", "Ar", 45, 45, 45, 32, golpe_9, golpe_10);
+        Monstros monstro_6 = new Monstros("Miguel", "Fogo", 45, 45, 45, 87, golpe_11, golpe_12);
 
         Monstros[] monstros = {monstro_1, monstro_2, monstro_3, monstro_4, monstro_5, monstro_6};
         Monstros[] user_1 = new Monstros[3];
@@ -78,13 +80,11 @@ public class Main {
                     break;
             }
         }while(decisao != Main.OPCAO_SAIR);
-
-        input.close();
-        
     }
 
     public static void iniciarJogo(Monstros[] user_1, Monstros[] user_2){
-    
+        
+        int i = 0;
         Scanner scanner = new Scanner(System.in);
         System.out.println("User 1: Menu de Escolha!!:");
         System.out.println("1- Ataque: ");
@@ -97,12 +97,68 @@ public class Main {
         System.out.println("2 - Trocar");
         int escolhaRodada_2 = scanner.nextInt();
         System.out.println("User 2 - Escolheu: " + escolhaRodada_2);
-        scanner.close();
+        
 
+        int rodada_1;
         if(escolhaRodada_1 == 1 && escolhaRodada_2 == 1){
-            System.out.println("A batalha começou:");
-            int escolha = 0;
-            user_1[escolha].getDefesa();  
+            if(user_1[i].getVelocidade() > user_2[i].getVelocidade()){
+                System.out.println("User 1 ataca primeiro!!!");
+                System.out.println("A batalha começou:");
+                rodada_1 = user_1[i].getForca() - user_2[i].getDefesa() - user_2[i].getVida();
+                System.out.println(rodada_1);
+                System.out.println(user_2[i].getVida());
+                System.out.println("Rodada finalizada");
+            }
+            else if(user_1[i].getVelocidade() < user_2[i].getVelocidade()){
+                System.out.println("User 2 ataca primeiro!!!");
+                System.out.println("A batalha começou:");
+                rodada_1 = user_2[i].getForca() - user_1[i].getDefesa() - user_1[i].getVida();
+                System.out.println(rodada_1);
+                System.out.println(user_1[i].getVida());
+                System.out.println("Rodada finalizada");
+            }
+            else if(user_1[i].getVelocidade() == user_2[i].getVelocidade()){
+                if(user_1[i].getDefesa() > user_2[i].getDefesa()){
+                    System.out.println("User 1 ataca primeiro!!!");
+                    System.out.println("A batalha começou:");
+                    rodada_1 = user_1[i].getForca() - user_2[i].getDefesa() - user_2[i].getVida();
+                    System.out.println(rodada_1);
+                    System.out.println(user_2[i].getVida());
+                    System.out.println("Rodada finalizada");
+                }
+                else{
+                    System.out.println("User 2 ataca primeiro!!!");
+                    System.out.println("A batalha começou:");
+                    rodada_1 = user_2[i].getForca() - user_1[i].getDefesa() - user_1[i].getVida();
+                    System.out.println(rodada_1);
+                    System.out.println(user_1[i].getVida());
+                    System.out.println("Rodada finalizada");
+                }
+            }
+        }
+        else if(escolhaRodada_1 == 1 && escolhaRodada_2 == 2){
+            Scanner troca = new Scanner(System.in);
+            System.out.println("Você tem essas opções! ");
+            System.out.println("1 - para o Monstro " + user_2[i+1].getNomeMonstro());
+            System.out.println("2 - para o Monstro " + user_2[i+2].getNomeMonstro());
+            System.out.println("Escolha a sua troca: ");
+            int troca_1 = troca.nextInt();
+            System.out.println("Troca Efetuada: " + troca_1);
+        }
+        else if(escolhaRodada_1 == 2 && escolhaRodada_2 == 1){
+            Scanner troca_ = new Scanner(System.in);
+            System.out.println("Você tem essas opções! ");
+            System.out.println("1 - Monstro " + user_1[i+1].getNomeMonstro());
+            System.out.println("2 - Monstro " + user_1[i+2].getNomeMonstro());
+            System.out.println("Escolha a sua troca: ");
+            int troca_2 = troca_.nextInt();
+            System.out.println("Troca Efetuada: " + troca_2);
+            
+            if(troca_2 == 1){
+                Monstros name = user_1[i+2];
+            }
         }
     }
 }
+
+    
