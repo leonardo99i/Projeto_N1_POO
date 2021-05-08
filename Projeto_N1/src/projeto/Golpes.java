@@ -13,6 +13,6 @@ public class Golpes {
 
     @Override
     public String toString(){
-        return "Golpes [elemento=" + elemento + ", nomeGolpe=" + nomeGolpe + ", poder=" + poder + "]";
+        return "[" + nomeGolpe + ", elemento = " + elemento + ", poder = " + poder + "]";
     }
 }

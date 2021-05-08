@@ -103,9 +103,9 @@ public class Monstros {
 
     @Override
     public String toString() {
-        return "Monstro [defesa=" + defesa + ", forca=" + forca + ", golpe_1=" + golpe_1 + ", golpe_2=" + golpe_2
-                + ", nomeMonstro=" + nomeMonstro + ", tipoElemento=" + tipoElemento + ", velocidade=" + velocidade
-                + ", vida=" + vida + "]";
+        return "Monstro " + nomeMonstro + ", elemento = " + tipoElemento + ", vida = " + vida + ", força = " + forca
+                + ", defesa = " + defesa + ", velocidade = " + velocidade + ", primeiro golpe = " + golpe_1
+                + ", segundo golpe = " + golpe_2;
     }
 
     
