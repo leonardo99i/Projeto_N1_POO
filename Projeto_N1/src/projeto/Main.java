@@ -65,13 +65,12 @@ public class Main {
         do{
             System.out.println("Digite 1 para começar o jogo ou 0 para sair ");
             decisao = input.nextInt();
-
             switch(decisao){
                 case Main.OPCAO_SAIR:
                     break;
                 
                 case Main.INICIAR_JOGO:
-                    iniciarJogo(user_1, user_2, golpes);
+                    iniciarJogo(user_1, user_2);
                     break;
                 
                 default:
@@ -82,7 +81,7 @@ public class Main {
     }
     
         
-    public static void iniciarJogo(Monstros[] user_1, Monstros[] user_2, Golpes[] golpes){
+    public static void iniciarJogo(Monstros[] user_1, Monstros[] user_2){
         
         int i=0;
         int j=0;
@@ -126,6 +125,7 @@ public class Main {
                 System.out.println(rodada_1);
                 //rodada_1 = user_2[j].setVida();
                 System.out.println("Rodada finalizada");
+                System.out.println(user_2[j].estaVivo());
             }
             else if(user_1[i].getVelocidade() < user_2[j].getVelocidade()){
                 System.out.println("User 2 ataca primeiro!!!");
@@ -136,6 +136,7 @@ public class Main {
                 System.out.println(rodada_1);
                 System.out.println(user_1[i].getVida());
                 System.out.println("Rodada finalizada");
+                System.out.println(user_1[i].estaVivo());
             }
             else if(user_1[i].getVelocidade() == user_2[j].getVelocidade()){
                 if(user_1[i].getDefesa() > user_2[j].getDefesa()){
@@ -147,6 +148,7 @@ public class Main {
                     System.out.println(rodada_1);
                     System.out.println(user_2[j].getVida());
                     System.out.println("Rodada finalizada");
+                    System.out.println(user_2[j].estaVivo());
                 }
                 else{
                     System.out.println("User 2 ataca primeiro!!!");
@@ -157,6 +159,7 @@ public class Main {
                     System.out.println(rodada_1);
                     System.out.println(user_1[i].getVida());
                     System.out.println("Rodada finalizada");
+                    System.out.println(user_1[i].estaVivo());
                 }
             }
         }
