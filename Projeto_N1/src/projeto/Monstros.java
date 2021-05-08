@@ -96,9 +96,14 @@ public class Monstros {
         }
         return true;
     }
-
-    public void perderVida(int poderDoGolpe){
-        this.vida = this.vida + this.defesa - poderDoGolpe;
+    
+    public int getGolpe(int numeroGolpe){
+        if(numeroGolpe == 1){
+            return golpe_1.getPoder();
+        }else if(numeroGolpe == 2){
+            return golpe_2.getPoder();
+        }
+        return 0;
     }
 
     @Override
@@ -106,7 +111,5 @@ public class Monstros {
         return "Monstro " + nomeMonstro + ", elemento = " + tipoElemento + ", vida = " + vida + ", força = " + forca
                 + ", defesa = " + defesa + ", velocidade = " + velocidade + ", primeiro golpe = " + golpe_1
                 + ", segundo golpe = " + golpe_2;
-    }
-
-    
+    }   
 }

@@ -2,6 +2,8 @@ package projeto;
 
 import java.util.Scanner;
 
+import java.util.Scanner;
+
 public class Main {
     
     public static final int OPCAO_SAIR = 0;
@@ -108,7 +110,7 @@ public class Main {
         System.out.println("Escolheu o Golpe: " + escolheGolpe);
         
         System.out.println("Escolha de Golpe: ");
-        System.out.println("User 1: Menu de Escolha de Golpes.");
+        System.out.println("User 2: Menu de Escolha de Golpes.");
         System.out.println("1- Golpe: " + user_2[j].getGolpe_1());
         System.out.println("2- Golpe: " + user_2[j].getGolpe_2());
         int escolheGolpe_2 = scanner.nextInt();
@@ -125,7 +127,7 @@ public class Main {
                 System.out.println("User 1: " + user_1[i].getNomeMonstro());
                 System.out.println("User 2: " + user_2[j].getNomeMonstro());
                 //teriamos que colocar com o set a vida se nao o valor não é salvo e continua como o inicial mas nao sei como fazer
-                rodada_1 = user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca();
+                rodada_1 = user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe);
                 System.out.println(rodada_1);
                 //rodada_1 = user_2[j].setVida();
                 System.out.println("Rodada finalizada");
@@ -135,7 +137,7 @@ public class Main {
                 System.out.println("A batalha começou:");
                 System.out.println("User 1: " + user_1[i].getNomeMonstro());
                 System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                rodada_1 = user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca();
+                rodada_1 = user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca()- user_2[j].getGolpe(escolheGolpe_2);
                 System.out.println(rodada_1);
                 System.out.println(user_1[i].getVida());
                 System.out.println("Rodada finalizada");

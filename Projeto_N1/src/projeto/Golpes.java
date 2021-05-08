@@ -15,4 +15,8 @@ public class Golpes {
     public String toString(){
         return "[" + nomeGolpe + ", elemento = " + elemento + ", poder = " + poder + "]";
     }
+    
+    public int getPoder(){
+        return this.poder;
+    }
 }
