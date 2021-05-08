@@ -2,8 +2,6 @@ package projeto;
 
 import java.util.Scanner;
 
-import java.util.Scanner;
-
 public class Main {
     
     public static final int OPCAO_SAIR = 0;
@@ -115,9 +113,6 @@ public class Main {
         System.out.println("2- Golpe: " + user_2[j].getGolpe_2());
         int escolheGolpe_2 = scanner.nextInt();
         System.out.println("Escolheu o Golpe: " + escolheGolpe_2);
-        if(escolheGolpe_2 == 1){
-            
-        }
         
         int rodada_1;
         if(escolhaRodada_1 == 1 && escolhaRodada_2 == 1){
@@ -148,7 +143,7 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    rodada_1 = user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca();
+                    rodada_1 = user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe);
                     System.out.println(rodada_1);
                     System.out.println(user_2[j].getVida());
                     System.out.println("Rodada finalizada");
@@ -158,7 +153,7 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    rodada_1 = user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca();
+                    rodada_1 = user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - user_2[j].getGolpe(escolheGolpe);
                     System.out.println(rodada_1);
                     System.out.println(user_1[i].getVida());
                     System.out.println("Rodada finalizada");
