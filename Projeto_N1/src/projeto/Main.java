@@ -101,6 +101,20 @@ public class Main {
         int escolhaRodada_2 = scanner.nextInt();
         System.out.println("User 2 - Escolheu: " + escolhaRodada_2);
         
+        System.out.println("Escolha de Golpe: ");
+        System.out.println("User 1: Menu de Escolha de Golpes.");
+        System.out.println("1- Golpe: " + user_1[i].getGolpe_1());
+        System.out.println("2- Golpe: " + user_1[i].getGolpe_2());
+        int escolheGolpe = scanner.nextInt();
+        System.out.println("Escolheu o Golpe: " + escolheGolpe);
+        
+        System.out.println("Escolha de Golpe: ");
+        System.out.println("User 1: Menu de Escolha de Golpes.");
+        System.out.println("1- Golpe: " + user_2[j].getGolpe_1());
+        System.out.println("2- Golpe: " + user_2[j].getGolpe_2());
+        int escolheGolpe_2 = scanner.nextInt();
+        System.out.println("Escolheu o Golpe: " + escolheGolpe_2);
+        
 
         int rodada_1;
         if(escolhaRodada_1 == 1 && escolhaRodada_2 == 1){
