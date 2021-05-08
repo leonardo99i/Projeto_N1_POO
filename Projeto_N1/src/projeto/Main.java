@@ -20,19 +20,19 @@ public class Main {
         Golpes golpe_6 = new Golpes("Terremoto", 88, "Terra");
         Golpes golpe_7 = new Golpes("Rasteira", 40, "Ar");
         Golpes golpe_8 = new Golpes("Furacão", 60, "Ar");
-        Golpes golpe_9 = new Golpes("Soco duplo", 28, "Grama");
+        Golpes golpe_9 = new Golpes("Soco duplo", 70, "Grama");
         Golpes golpe_10 = new Golpes("Plantas carnívoras", 75, "Grama");
-        Golpes golpe_11 = new Golpes("Chute duplo", 17, "Eletricidade");
+        Golpes golpe_11 = new Golpes("Chute duplo", 65, "Eletricidade");
         Golpes golpe_12 = new Golpes("Super choque", 99, "Eletricidade");
 
         Golpes[] golpes = {golpe_1, golpe_2, golpe_3, golpe_4, golpe_5, golpe_6, golpe_7, golpe_8, golpe_9, golpe_10, golpe_11, golpe_12};
 
-        Monstros monstro_1 = new Monstros("Alfredo", "Água", 100, 55, 45, 90, golpe_1, golpe_2);
-        Monstros monstro_2 = new Monstros("Jorge", "Fogo", 100, 65, 55, 40, golpe_3, golpe_4);
-        Monstros monstro_3 = new Monstros("Armando", "Terra", 100, 95, 45, 45, golpe_5, golpe_6);
-        Monstros monstro_4 = new Monstros("Inacio", "Ar", 100, 45, 75, 60, golpe_7, golpe_8);
-        Monstros monstro_5 = new Monstros("Carlos", "Grama", 100, 70, 10, 32, golpe_9, golpe_10);
-        Monstros monstro_6 = new Monstros("Miguel", "Eletricidade", 100, 25, 65, 87, golpe_11, golpe_12);
+        Monstros monstro_1 = new Monstros("Alfredo", "Água", 1000, 105, 45, 90, golpe_1, golpe_2);
+        Monstros monstro_2 = new Monstros("Jorge", "Fogo", 1000, 120, 45, 40, golpe_3, golpe_4);
+        Monstros monstro_3 = new Monstros("Armando", "Terra", 1000, 95, 45, 45, golpe_5, golpe_6);
+        Monstros monstro_4 = new Monstros("Inacio", "Ar", 1000, 100, 75, 60, golpe_7, golpe_8);
+        Monstros monstro_5 = new Monstros("Carlos", "Grama", 1000, 170, 55, 32, golpe_9, golpe_10);
+        Monstros monstro_6 = new Monstros("Miguel", "Eletricidade", 1000, 99, 65, 87, golpe_11, golpe_12);
 
         Monstros[] monstros = {monstro_1, monstro_2, monstro_3, monstro_4, monstro_5, monstro_6};
         Monstros[] user_1 = new Monstros[3];
@@ -86,6 +86,7 @@ public class Main {
     public static void iniciarJogo(Monstros[] user_1, Monstros[] user_2){
         
         int i=0;
+        int j=0;
         do{ //fiz um do while pra ele nao pegar novamente o valor de i=0 e substituir i quando o monstro for trocado, mas o criterio de para do while esta errado
         Scanner scanner = new Scanner(System.in);
         System.out.println("User 1: Menu de Escolha!!:");
@@ -103,35 +104,44 @@ public class Main {
 
         int rodada_1;
         if(escolhaRodada_1 == 1 && escolhaRodada_2 == 1){
-            if(user_1[i].getVelocidade() > user_2[i].getVelocidade()){
+            if(user_1[i].getVelocidade() > user_2[j].getVelocidade()){
                 System.out.println("User 1 ataca primeiro!!!");
                 System.out.println("A batalha começou:");
+                System.out.println("User 1: " + user_1[i].getNomeMonstro());
+                System.out.println("User 2: " + user_2[j].getNomeMonstro());
                 //teriamos que colocar com o set a vida se nao o valor não é salvo e continua como o inicial mas nao sei como fazer
-                user_2[i].setVida(vida) = user_2[i].getVida() - user_1[i].getForca() + user_2[i].getDefesa();
-                System.out.println(user_2[i].getVida());
+                rodada_1 = user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca();
+                System.out.println(rodada_1);
+                //rodada_1 = user_2[j].setVida();
                 System.out.println("Rodada finalizada");
             }
-            else if(user_1[i].getVelocidade() < user_2[i].getVelocidade()){
+            else if(user_1[i].getVelocidade() < user_2[j].getVelocidade()){
                 System.out.println("User 2 ataca primeiro!!!");
                 System.out.println("A batalha começou:");
-                rodada_1 = user_1[i].getVida() - user_2[i].getForca() + user_1[i].getDefesa();
+                System.out.println("User 1: " + user_1[i].getNomeMonstro());
+                System.out.println("User 2: " + user_2[j].getNomeMonstro());
+                rodada_1 = user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca();
                 System.out.println(rodada_1);
                 System.out.println(user_1[i].getVida());
                 System.out.println("Rodada finalizada");
             }
-            else if(user_1[i].getVelocidade() == user_2[i].getVelocidade()){
-                if(user_1[i].getDefesa() > user_2[i].getDefesa()){
+            else if(user_1[i].getVelocidade() == user_2[j].getVelocidade()){
+                if(user_1[i].getDefesa() > user_2[j].getDefesa()){
                     System.out.println("User 1 ataca primeiro!!!");
                     System.out.println("A batalha começou:");
-                    rodada_1 = user_2[i].getVida() - user_1[i].getForca() + user_2[i].getDefesa();
+                    System.out.println("User 1: " + user_1[i].getNomeMonstro());
+                    System.out.println("User 2: " + user_2[j].getNomeMonstro());
+                    rodada_1 = user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca();
                     System.out.println(rodada_1);
-                    System.out.println(user_2[i].getVida());
+                    System.out.println(user_2[j].getVida());
                     System.out.println("Rodada finalizada");
                 }
                 else{
                     System.out.println("User 2 ataca primeiro!!!");
                     System.out.println("A batalha começou:");
-                    rodada_1 = user_1[i].getVida() - user_2[i].getForca() + user_1[i].getDefesa();
+                    System.out.println("User 1: " + user_1[i].getNomeMonstro());
+                    System.out.println("User 2: " + user_2[j].getNomeMonstro());
+                    rodada_1 = user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca();
                     System.out.println(rodada_1);
                     System.out.println(user_1[i].getVida());
                     System.out.println("Rodada finalizada");
@@ -140,29 +150,37 @@ public class Main {
         }
         else if(escolhaRodada_1 == 1 && escolhaRodada_2 == 2){
             Scanner troca = new Scanner(System.in);
-            System.out.println("Você tem essas opções! ");
-            System.out.println("1 - para o Monstro " + user_2[i+1].getNomeMonstro());
-            System.out.println("2 - para o Monstro " + user_2[i+2].getNomeMonstro());
+            System.out.println("User 2: Você tem essas opções! ");
+            System.out.println("1 - para o Monstro " + user_2[j+1].getNomeMonstro());
+            System.out.println("2 - para o Monstro " + user_2[j+2].getNomeMonstro());
             System.out.println("Escolha a sua troca: ");
             int troca_1 = troca.nextInt();
+            if(troca_1 == 1){
+                j = 1;
+                System.out.println(user_2[j].getNomeMonstro());
+            }
+            else if(troca_1 == 2){
+                j = 2;
+                System.out.println(user_2[j].getNomeMonstro());
+            }
             System.out.println("Troca Efetuada: " + troca_1);
         }
         else if(escolhaRodada_1 == 2 && escolhaRodada_2 == 1){
             Scanner troca_ = new Scanner(System.in);
-            System.out.println("Você tem essas opções! ");
+            System.out.println("User 1: Você tem essas opções! ");
             System.out.println("1 - Monstro " + user_1[i+1].getNomeMonstro());
             System.out.println("2 - Monstro " + user_1[i+2].getNomeMonstro());
             System.out.println("Escolha a sua troca: ");
             int troca_2 = troca_.nextInt();
-            System.out.println("Troca Efetuada: " + troca_2);
-            
             if(troca_2 == 1){
                 i = 1;
+                System.out.println(user_1[i].getNomeMonstro());
             }else if(troca_2 == 2){
                 i = 2;
+                System.out.println(user_1[i].getNomeMonstro());
             }
+            System.out.println("Troca Efetuada: " + troca_2);
         }
-        }while(user_1[i].getVida() != 0 && user_2[i].getVida() != 0);
+        }while(user_1[i].getVida() != 0 && user_2[j].getVida() != 0);
     }
-
-    }
+}
