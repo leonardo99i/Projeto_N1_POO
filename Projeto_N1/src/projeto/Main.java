@@ -38,6 +38,14 @@ public class Main {
         Monstros[] monstros = {monstro_1, monstro_2, monstro_3, monstro_4, monstro_5, monstro_6};
         Monstros[] user_1 = new Monstros[3];
         Monstros[] user_2 = new Monstros[3];
+        
+        System.out.println("----Menu de Opções----");
+        System.out.println("Monstro 0 - " + monstro_1);
+        System.out.println("Monstro 1 - " + monstro_2);
+        System.out.println("Monstro 2 - " + monstro_3);
+        System.out.println("Monstro 3 - " + monstro_4);
+        System.out.println("Monstro 4 - " + monstro_5);
+        System.out.println("Monstro 5 - " + monstro_6);
 
         int escolha = 0;
         while(escolha < 3){
@@ -55,11 +63,13 @@ public class Main {
             escolha++;
         }
 
-        System.out.println("User 1 escolheu: 1 - " + user_1[0].toString());
+        System.out.println("User 1 escolheu: ");
+        System.out.println("1 - " + user_1[0].toString());
         System.out.println("2 - " + user_1[1].toString());
         System.out.println("3 - " + user_1[2].toString());
         System.out.println();
-        System.out.println("User 2 escolheu: 1 - " + user_2[0].toString());
+        System.out.println("User 2 escolheu: ");
+        System.out.println("1 - " + user_2[0].toString());
         System.out.println("2 - " + user_2[1].toString());
         System.out.println("3 - " + user_2[2].toString());
 
@@ -68,16 +78,12 @@ public class Main {
             System.out.println("Digite 1 para começar o jogo ou 0 para sair ");
             decisao = input.nextInt();
             switch(decisao){
-                case Main.OPCAO_SAIR:
-                    break;
+                case Main.OPCAO_SAIR -> {
+                }
                 
-                case Main.INICIAR_JOGO:
-                    iniciarJogo(user_1, user_2, user_1[i].getVida(), user_2[j].getVida());
-                    break;
+                case Main.INICIAR_JOGO -> iniciarJogo(user_1, user_2, user_1[i].getVida(), user_2[j].getVida());
                 
-                default:
-                    System.out.println("Opção Invalida!");
-                    break;
+                default -> System.out.println("Opção Invalida!");
             }
         }while(decisao != Main.OPCAO_SAIR);
     }
@@ -170,32 +176,58 @@ public class Main {
         else if(escolhaRodada_1 == 1 && escolhaRodada_2 == 2){
             Scanner troca = new Scanner(System.in);
             System.out.println("User 2: Você tem essas opções! ");
-            System.out.println("1 - para o Monstro " + user_2[j+1].getNomeMonstro());
-            System.out.println("2 - para o Monstro " + user_2[j+2].getNomeMonstro());
+            System.out.println("0 - para o Monstro " + user_2[0].getNomeMonstro());
+            System.out.println("1 - para o Monstro " + user_2[1].getNomeMonstro());
+            System.out.println("2 - para o Monstro " + user_2[2].getNomeMonstro());
             System.out.println("Escolha a sua troca: ");
             int troca_1 = troca.nextInt();
-            if(troca_1 == 1){
-                j = 1;
-                System.out.println(user_2[j].getNomeMonstro());
-            }
-            else if(troca_1 == 2){
-                j = 2;
-                System.out.println(user_2[j].getNomeMonstro());
+            switch (troca_1) {
+                case 1:
+                    j = 1;
+                    user_2[1].getVida();
+                    System.out.println(user_2[1].getVida());
+                    System.out.println(user_2[j].getNomeMonstro());
+                    break;
+                case 2:
+                    j = 2;
+                    user_2[2].getVida();
+                    System.out.println(user_2[2].getVida());
+                    System.out.println(user_2[j].getNomeMonstro());
+                    break;
+                case 0:
+                    j = 0;
+                    user_2[2].getVida();
+                    System.out.println(user_2[j].getVida());
+                    System.out.println(user_2[j].getNomeMonstro());
+                    break;
+                default:
+                    break;
             }
             System.out.println("Troca Efetuada: " + troca_1);
         }
         else if(escolhaRodada_1 == 2 && escolhaRodada_2 == 1){
             Scanner troca_ = new Scanner(System.in);
             System.out.println("User 1: Você tem essas opções! ");
-            System.out.println("1 - Monstro " + user_1[i+1].getNomeMonstro());
-            System.out.println("2 - Monstro " + user_1[i+2].getNomeMonstro());
+            System.out.println("o - Monstro " + user_1[0].getNomeMonstro());
+            System.out.println("1 - Monstro " + user_1[1].getNomeMonstro());
+            System.out.println("2 - Monstro " + user_1[2].getNomeMonstro());
             System.out.println("Escolha a sua troca: ");
             int troca_2 = troca_.nextInt();
             if(troca_2 == 1){
                 i = 1;
+                user_1[1].setVida(vida1);
+                System.out.println(vida1);
                 System.out.println(user_1[i].getNomeMonstro());
             }else if(troca_2 == 2){
                 i = 2;
+                user_1[2].setVida(vida1);
+                System.out.println(vida1);
+                System.out.println(user_1[i].getNomeMonstro());
+            }            
+            else if(troca_2 == 0){
+                i = 0;
+                user_1[i].getVida();
+                System.out.println(user_1[i].getVida());
                 System.out.println(user_1[i].getNomeMonstro());
             }
             System.out.println("Troca Efetuada: " + troca_2);
