@@ -10,6 +10,8 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner input = new Scanner(System.in);
+        int i = 0;
+        int j = 0;
 
         Golpes golpe_1 = new Golpes("Super soco", 46, "Água");
         Golpes golpe_2 = new Golpes("Tsunami", 60, "Água");
@@ -70,7 +72,7 @@ public class Main {
                     break;
                 
                 case Main.INICIAR_JOGO:
-                    iniciarJogo(user_1, user_2);
+                    iniciarJogo(user_1, user_2, user_1[i].getVida(), user_2[j].getVida());
                     break;
                 
                 default:
@@ -81,11 +83,13 @@ public class Main {
     }
     
         
-    public static void iniciarJogo(Monstros[] user_1, Monstros[] user_2){
+    public static void iniciarJogo(Monstros[] user_1, Monstros[] user_2, int vida1, int vida2){
         
         int i=0;
         int j=0;
+        
         do{ //fiz um do while pra ele nao pegar novamente o valor de i=0 e substituir i quando o monstro for trocado, mas o criterio de para do while esta errado
+        
         Scanner scanner = new Scanner(System.in);
         System.out.println("User 1: Menu de Escolha!!:");
         System.out.println("1- Ataque: ");
@@ -113,7 +117,7 @@ public class Main {
         int escolheGolpe_2 = scanner.nextInt();
         System.out.println("Escolheu o Golpe: " + escolheGolpe_2);
         
-        int rodada_1;
+        
         if(escolhaRodada_1 == 1 && escolhaRodada_2 == 1){
             if(user_1[i].getVelocidade() > user_2[j].getVelocidade()){
                 System.out.println("User 1 ataca primeiro!!!");
@@ -121,9 +125,9 @@ public class Main {
                 System.out.println("User 1: " + user_1[i].getNomeMonstro());
                 System.out.println("User 2: " + user_2[j].getNomeMonstro());
                 //teriamos que colocar com o set a vida se nao o valor não é salvo e continua como o inicial mas nao sei como fazer
-                rodada_1 = user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe);
-                System.out.println(rodada_1);
-                //rodada_1 = user_2[j].setVida();
+                vida2 = (user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
+                user_2[j].setVida(vida2);
+                System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
                 System.out.println("Rodada finalizada");
                 System.out.println(user_2[j].estaVivo());
             }
@@ -132,9 +136,9 @@ public class Main {
                 System.out.println("A batalha começou:");
                 System.out.println("User 1: " + user_1[i].getNomeMonstro());
                 System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                rodada_1 = user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca()- user_2[j].getGolpe(escolheGolpe_2);
-                System.out.println(rodada_1);
-                System.out.println(user_1[i].getVida());
+                vida1 = user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca()- user_2[j].getGolpe(escolheGolpe_2);
+                user_1[i].setVida(vida1);
+                System.out.println("A vida do user 2 caiu para: " + user_1[i].getVida());
                 System.out.println("Rodada finalizada");
                 System.out.println(user_1[i].estaVivo());
             }
@@ -144,9 +148,9 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    rodada_1 = user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe);
-                    System.out.println(rodada_1);
-                    System.out.println(user_2[j].getVida());
+                    vida2 = (user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
+                    user_2[j].setVida(vida2);
+                    System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
                     System.out.println("Rodada finalizada");
                     System.out.println(user_2[j].estaVivo());
                 }
@@ -155,9 +159,9 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    rodada_1 = user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - user_2[j].getGolpe(escolheGolpe);
-                    System.out.println(rodada_1);
-                    System.out.println(user_1[i].getVida());
+                    vida1 = user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - user_2[j].getGolpe(escolheGolpe_2);
+                    user_1[i].setVida(vida1);
+                    System.out.println("A vida do user 2 caiu para: " + user_1[i].getVida());
                     System.out.println("Rodada finalizada");
                     System.out.println(user_1[i].estaVivo());
                 }
@@ -196,6 +200,6 @@ public class Main {
             }
             System.out.println("Troca Efetuada: " + troca_2);
         }
-        }while(user_1[i].getVida() != 0 && user_2[j].getVida() != 0);
+        }while(user_1[i].getVida()!= 0 && user_2[j].getVida() != 0);
     }
 }
