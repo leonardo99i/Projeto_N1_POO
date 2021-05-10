@@ -93,7 +93,7 @@ public class Main {
         
         int i=0;
         int j=0;
-        int bonusElemento = 1;
+        
         int monstroVivo_1 = 2; //User_1
         int monstroVivo_2 = 2; //User2
         
@@ -101,6 +101,8 @@ public class Main {
         
         do{ //fiz um do while pra ele nao pegar novamente o valor de i=0 e substituir i quando o monstro for trocado, mas o criterio de para do while esta errado
         
+        int bonusElemento;    
+          
         Scanner scanner = new Scanner(System.in);
         System.out.println("User 1: Menu de Escolha!!:");
         System.out.println("1- Ataque: ");
@@ -121,6 +123,8 @@ public class Main {
             bonusElemento = 2;
         }else if ("Ar".equals(user_1[i].getTipoElemento()) && "Grama".equals(user_2[j].getTipoElemento()) || "Grama".equals(user_1[i].getTipoElemento()) && "Ar".equals(user_2[j].getTipoElemento())){
             bonusElemento = 2;
+        }else{
+            bonusElemento = 1;
         }
         
         System.out.println("Escolha de Golpe: ");
@@ -218,6 +222,17 @@ public class Main {
                     user_2[1].getVida();
                     System.out.println(user_2[1].getVida());
                     System.out.println(user_2[j].getNomeMonstro());
+                    
+                    if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Terra".equals(user_1[i].getTipoElemento()) && "Eletricidade".equals(user_2[j].getTipoElemento()) || "Eletricidade".equals(user_1[i].getTipoElemento()) && "Terra".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Ar".equals(user_1[i].getTipoElemento()) && "Grama".equals(user_2[j].getTipoElemento()) || "Grama".equals(user_1[i].getTipoElemento()) && "Ar".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else{
+                        bonusElemento = 1;
+                    }
+                    
                     System.out.println("User 1 ataca primeiro!!!");
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
@@ -238,6 +253,17 @@ public class Main {
                     user_2[2].getVida();
                     System.out.println(user_2[2].getVida());
                     System.out.println(user_2[j].getNomeMonstro());
+                    
+                    if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Terra".equals(user_1[i].getTipoElemento()) && "Eletricidade".equals(user_2[j].getTipoElemento()) || "Eletricidade".equals(user_1[i].getTipoElemento()) && "Terra".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Ar".equals(user_1[i].getTipoElemento()) && "Grama".equals(user_2[j].getTipoElemento()) || "Grama".equals(user_1[i].getTipoElemento()) && "Ar".equals(user_2[j].getTipoElemento())){
+                         bonusElemento = 2;
+                    }else{
+                         bonusElemento = 1;
+                    }
+                    
                     System.out.println("User 1 ataca primeiro!!!");
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
@@ -257,6 +283,17 @@ public class Main {
                     user_2[2].getVida();
                     System.out.println(user_2[j].getVida());
                     System.out.println(user_2[j].getNomeMonstro());
+                    
+                    if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Terra".equals(user_1[i].getTipoElemento()) && "Eletricidade".equals(user_2[j].getTipoElemento()) || "Eletricidade".equals(user_1[i].getTipoElemento()) && "Terra".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Ar".equals(user_1[i].getTipoElemento()) && "Grama".equals(user_2[j].getTipoElemento()) || "Grama".equals(user_1[i].getTipoElemento()) && "Ar".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else{
+                        bonusElemento = 1;
+                    }
+                    
                     System.out.println("User 1 ataca primeiro!!!");
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
@@ -291,6 +328,17 @@ public class Main {
                     user_1[1].getVida();
                     System.out.println(user_1[1].getVida());
                     System.out.println(user_1[i].getNomeMonstro());
+                    
+                    if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Terra".equals(user_1[i].getTipoElemento()) && "Eletricidade".equals(user_2[j].getTipoElemento()) || "Eletricidade".equals(user_1[i].getTipoElemento()) && "Terra".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Ar".equals(user_1[i].getTipoElemento()) && "Grama".equals(user_2[j].getTipoElemento()) || "Grama".equals(user_1[i].getTipoElemento()) && "Ar".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else{
+                        bonusElemento = 1;
+                    }
+                    
                     System.out.println("User 2 ataca primeiro!!!");
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
@@ -309,6 +357,17 @@ public class Main {
                     user_1[2].getVida();
                     System.out.println(user_1[2].getVida());
                     System.out.println(user_1[i].getNomeMonstro());
+                    
+                    if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Terra".equals(user_1[i].getTipoElemento()) && "Eletricidade".equals(user_2[j].getTipoElemento()) || "Eletricidade".equals(user_1[i].getTipoElemento()) && "Terra".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Ar".equals(user_1[i].getTipoElemento()) && "Grama".equals(user_2[j].getTipoElemento()) || "Grama".equals(user_1[i].getTipoElemento()) && "Ar".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else{
+                        bonusElemento = 1;
+                    }
+                    
                     System.out.println("User 2 ataca primeiro!!!");
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
@@ -328,6 +387,17 @@ public class Main {
                     user_1[0].getVida();
                     System.out.println(user_1[0].getVida());
                     System.out.println(user_1[i].getNomeMonstro());
+                    
+                    if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Terra".equals(user_1[i].getTipoElemento()) && "Eletricidade".equals(user_2[j].getTipoElemento()) || "Eletricidade".equals(user_1[i].getTipoElemento()) && "Terra".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Ar".equals(user_1[i].getTipoElemento()) && "Grama".equals(user_2[j].getTipoElemento()) || "Grama".equals(user_1[i].getTipoElemento()) && "Ar".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else{
+                        bonusElemento = 1;
+                    }
+                    
                     System.out.println("User 2 ataca primeiro!!!");
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
