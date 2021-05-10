@@ -93,8 +93,11 @@ public class Main {
         
         int i=0;
         int j=0;
+        int bonusElemento = 1;
         int monstroVivo_1 = 2; //User_1
         int monstroVivo_2 = 2; //User2
+        
+        
         
         do{ //fiz um do while pra ele nao pegar novamente o valor de i=0 e substituir i quando o monstro for trocado, mas o criterio de para do while esta errado
         
@@ -110,6 +113,15 @@ public class Main {
         System.out.println("2 - Trocar");
         int escolhaRodada_2 = scanner.nextInt();
         System.out.println("User 2 - Escolheu: " + escolhaRodada_2);
+        
+        //Criando criterios dos elementos
+        if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
+            bonusElemento = 2;
+        }else if ("Terra".equals(user_1[i].getTipoElemento()) && "Eletricidade".equals(user_2[j].getTipoElemento()) || "Eletricidade".equals(user_1[i].getTipoElemento()) && "Terra".equals(user_2[j].getTipoElemento())){
+            bonusElemento = 2;
+        }else if ("Ar".equals(user_1[i].getTipoElemento()) && "Grama".equals(user_2[j].getTipoElemento()) || "Grama".equals(user_1[i].getTipoElemento()) && "Ar".equals(user_2[j].getTipoElemento())){
+            bonusElemento = 2;
+        }
         
         System.out.println("Escolha de Golpe: ");
         System.out.println("User 1: Menu de Escolha de Golpes.");
@@ -131,7 +143,7 @@ public class Main {
                 System.out.println("A batalha começou:");
                 System.out.println("User 1: " + user_1[i].getNomeMonstro());
                 System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
+                user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe)* bonusElemento));
                 if(user_2[j].getVida() <= 0){
                     monstroVivo_2--;
                     System.out.println("Troque o monstro");
@@ -146,7 +158,7 @@ public class Main {
                 System.out.println("A batalha começou:");
                 System.out.println("User 1: " + user_1[i].getNomeMonstro());
                 System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca()- user_2[j].getGolpe(escolheGolpe_2));
+                user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca()- (user_2[j].getGolpe(escolheGolpe_2)* bonusElemento));
               
                 if(user_1[i].getVida() <= 0){
                     monstroVivo_1--;
@@ -163,7 +175,7 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
+                    user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe)* bonusElemento));
                     
                     if(user_2[j].getVida() <= 0){
                         monstroVivo_2--;
@@ -179,7 +191,7 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - user_2[j].getGolpe(escolheGolpe_2));
+                    user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe_2) * bonusElemento));
                     
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
@@ -210,7 +222,7 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
+                    user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe) * bonusElemento));
                     
                     if(user_2[j].getVida() <= 0){
                         monstroVivo_2--;
@@ -230,7 +242,7 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
+                    user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_2[j].getVida() <= 0){
                         monstroVivo_2--;
                         System.out.println("Troque o monstro");
@@ -249,7 +261,7 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
+                    user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_2[j].getVida() <= 0){
                         monstroVivo_2--;
                         System.out.println("Troque o monstro");
@@ -283,7 +295,7 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - user_2[j].getGolpe(escolheGolpe));
+                    user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
                         System.out.println("Troque o monstro");
@@ -301,7 +313,7 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - user_2[j].getGolpe(escolheGolpe));          
+                    user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe) * bonusElemento));          
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
                         System.out.println("Troque o monstro");
@@ -320,7 +332,7 @@ public class Main {
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - user_2[j].getGolpe(escolheGolpe));
+                    user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
                         System.out.println("Troque o monstro");
