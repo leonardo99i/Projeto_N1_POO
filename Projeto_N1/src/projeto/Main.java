@@ -123,14 +123,12 @@ public class Main {
         int escolheGolpe_2 = scanner.nextInt();
         System.out.println("Escolheu o Golpe: " + escolheGolpe_2);
         
-        
         if(escolhaRodada_1 == 1 && escolhaRodada_2 == 1){
             if(user_1[i].getVelocidade() > user_2[j].getVelocidade()){
                 System.out.println("User 1 ataca primeiro!!!");
                 System.out.println("A batalha começou:");
                 System.out.println("User 1: " + user_1[i].getNomeMonstro());
                 System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                //teriamos que colocar com o set a vida se nao o valor não é salvo e continua como o inicial mas nao sei como fazer
                 vida2 = (user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
                 user_2[j].setVida(vida2);
                 System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
@@ -187,18 +185,45 @@ public class Main {
                     user_2[1].getVida();
                     System.out.println(user_2[1].getVida());
                     System.out.println(user_2[j].getNomeMonstro());
+                    System.out.println("User 1 ataca primeiro!!!");
+                    System.out.println("A batalha começou:");
+                    System.out.println("User 1: " + user_1[i].getNomeMonstro());
+                    System.out.println("User 2: " + user_2[j].getNomeMonstro());
+                    vida2 = (user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
+                    user_2[j].setVida(vida2);
+                    System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
+                    System.out.println("Rodada finalizada");
+                    System.out.println(user_2[j].estaVivo());
                     break;
                 case 2:
                     j = 2;
                     user_2[2].getVida();
                     System.out.println(user_2[2].getVida());
                     System.out.println(user_2[j].getNomeMonstro());
+                    System.out.println("User 1 ataca primeiro!!!");
+                    System.out.println("A batalha começou:");
+                    System.out.println("User 1: " + user_1[i].getNomeMonstro());
+                    System.out.println("User 2: " + user_2[j].getNomeMonstro());
+                    vida2 = (user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
+                    user_2[j].setVida(vida2);
+                    System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
+                    System.out.println("Rodada finalizada");
+                    System.out.println(user_2[j].estaVivo());
                     break;
                 case 0:
                     j = 0;
                     user_2[2].getVida();
                     System.out.println(user_2[j].getVida());
                     System.out.println(user_2[j].getNomeMonstro());
+                    System.out.println("User 1 ataca primeiro!!!");
+                    System.out.println("A batalha começou:");
+                    System.out.println("User 1: " + user_1[i].getNomeMonstro());
+                    System.out.println("User 2: " + user_2[j].getNomeMonstro());
+                    vida2 = (user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - user_1[i].getGolpe(escolheGolpe));
+                    user_2[j].setVida(vida2);
+                    System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
+                    System.out.println("Rodada finalizada");
+                    System.out.println(user_2[j].estaVivo());
                     break;
                 default:
                     break;
@@ -213,25 +238,46 @@ public class Main {
             System.out.println("2 - Monstro " + user_1[2].getNomeMonstro());
             System.out.println("Escolha a sua troca: ");
             int troca_2 = troca_.nextInt();
-            if(troca_2 == 1){
-                i = 1;
-                user_1[1].setVida(vida1);
-                System.out.println(vida1);
-                System.out.println(user_1[i].getNomeMonstro());
-            }else if(troca_2 == 2){
-                i = 2;
-                user_1[2].setVida(vida1);
-                System.out.println(vida1);
-                System.out.println(user_1[i].getNomeMonstro());
-            }            
-            else if(troca_2 == 0){
-                i = 0;
-                user_1[i].getVida();
-                System.out.println(user_1[i].getVida());
-                System.out.println(user_1[i].getNomeMonstro());
+            switch (troca_2) {
+                case 1:
+                    i = 1;
+                    user_1[1].setVida(vida1);
+                    System.out.println(vida1);
+                    System.out.println(user_1[i].getNomeMonstro());
+                    break;
+                case 2:
+                    i = 2;
+                    user_1[2].setVida(vida1);
+                    System.out.println(vida1);
+                    System.out.println(user_1[i].getNomeMonstro());
+                    break;
+                case 0:
+                    i = 0;
+                    user_1[i].getVida();
+                    System.out.println(user_1[i].getVida());
+                    System.out.println(user_1[i].getNomeMonstro());
+                    break;
+                default:
+                    break;
             }
             System.out.println("Troca Efetuada: " + troca_2);
         }
+        
+        /*if(user_1[0].estaVivo() == false && user_1[1].estaVivo() == false && user_1[2].estaVivo() == false){
+            user_1[i] == user_1[i].getVida();
+        }else if(user_1[1].estaVivo() == false){
+            System.out.println("Troque de Personagem!!");
+        }else if(user_1[2].estaVivo() == false){
+            System.out.println("GAME OVER!. O User 2 Ganhou!!");
+        }
+        
+        if(user_2[0].estaVivo() == false){
+            System.out.println("Troque de Personagem!!");
+        }else if(user_2[1].estaVivo() == false){
+            System.out.println("Troque de Personagem!!");
+        }else if(user_2[2].estaVivo() == false){
+            System.out.println("GAME OVER!. O User 1 Ganhou!!");
+        }*/
         }while(user_1[i].getVida()!= 0 && user_2[j].getVida() != 0);
     }
 }
