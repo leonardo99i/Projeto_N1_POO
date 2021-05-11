@@ -426,5 +426,11 @@ public class Main {
         }
         
         }while(vivo == true);
+        
+        if(monstroVivo_1 == 0){
+            System.out.println("Fim de Jogo!!! User 2 Ganhou!!!");
+        }else{
+            System.out.println("Fim de Jogo!!! User 1 Ganhou!!! ");
+        }
     }
 }
