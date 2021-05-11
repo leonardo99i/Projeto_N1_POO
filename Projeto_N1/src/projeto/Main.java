@@ -1,5 +1,10 @@
 package projeto;
 
+/*
+    Laura Moreira - 21331277
+    Leonardo Leonardi - 21976739
+*/
+
 import java.util.Scanner;
 
 public class Main {
