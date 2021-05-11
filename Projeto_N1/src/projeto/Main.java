@@ -147,10 +147,11 @@ public class Main {
                 user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe)* bonusElemento));
                 if(user_2[j].getVida() <= 0){
                     monstroVivo_2--;
+                    System.out.println("User 2 foi nocauteado");
                     System.out.println("ALERTA!!! User 2 troque seu monstro");
                 }else{
                     System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
-                    System.out.println("User 2 foi nocauteado");
+                    System.out.println("User 2 foi golpeado");
                     System.out.println("Rodada finalizada");
                 }
             }
@@ -163,10 +164,11 @@ public class Main {
               
                 if(user_1[i].getVida() <= 0){
                     monstroVivo_1--;
+                    System.out.println("User 1 foi nocauteado");
                     System.out.println("ALERTA!!! User 1 troque seu monstro");
                 }else{
                     System.out.println("A vida do user 1 caiu para: " + user_1[i].getVida());
-                    System.out.println("User 1 foi nocauteado");
+                    System.out.println("User 1 foi golpeado");
                     System.out.println("Rodada finalizada");
                 }
             }
@@ -180,10 +182,11 @@ public class Main {
                     
                     if(user_2[j].getVida() <= 0){
                         monstroVivo_2--;
+                        System.out.println("User 2 foi nocauteado");
                         System.out.println("ALERTA!!! User 2 troque seu monstro");
                     }else{
                         System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
-                        System.out.println("User 2 foi nocauteado");
+                        System.out.println("User 2 foi golpeado");
                         System.out.println("Rodada finalizada");
                     }
                 }
@@ -196,10 +199,11 @@ public class Main {
                     
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
+                        System.out.println("User 1 foi nocauteado");
                         System.out.println("ALERTA!!! User 1 troque seu monstro");
                     }else{
                         System.out.println("A vida do user 1 caiu para: " + user_1[i].getVida());
-                        System.out.println("User 1 foi nocauteado");
+                        System.out.println("User 1 foi golpeado");
                         System.out.println("Rodada finalizada");
                     }
                 }
@@ -241,10 +245,11 @@ public class Main {
                     
                     if(user_2[j].getVida() <= 0){
                         monstroVivo_2--;
+                        System.out.println("User 2 foi nocauteado");
                         System.out.println("ALERTA!!! User 2 troque seu monstro");
                     }else{
                         System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
-                        System.out.println("User 2 foi nocauteado");
+                        System.out.println("User 2 foi golpeado");
                         System.out.println("Rodada finalizada");
                     }
                     break;
@@ -271,10 +276,11 @@ public class Main {
                     user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_2[j].getVida() <= 0){
                         monstroVivo_2--;
+                        System.out.println("User 2 foi nocauteado");
                         System.out.println("ALERTA!!! User 2 troque seu  monstro");
                     }else{
                         System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
-                        System.out.println("User 2 foi nocauteado");
+                        System.out.println("User 2 foi golpeado");
                         System.out.println("Rodada finalizada");
                     }
                     break;
@@ -301,10 +307,11 @@ public class Main {
                     user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_2[j].getVida() <= 0){
                         monstroVivo_2--;
+                        System.out.println("User 2 foi nocauteado");
                         System.out.println("ALERTA!!! User 2 troque seu monstro");
                     }else{
                         System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
-                        System.out.println("User 2 foi nocauteado");
+                        System.out.println("User 2 foi golpeado");
                         System.out.println("Rodada finalizada");
                     }
                     break;
@@ -349,10 +356,11 @@ public class Main {
                     user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
+                        System.out.println("User 1 foi nocauteado");
                         System.out.println("ALERTA!!! User 1 troque seu  monstro");
                     }else{
                         System.out.println("A vida do user 1 caiu para: " + user_1[i].getVida());
-                        System.out.println("User 1 foi nocauteado");
+                        System.out.println("User 1 foi golpeado");
                         System.out.println("Rodada finalizada");
                     }
                 case 2:
@@ -378,10 +386,11 @@ public class Main {
                     user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe) * bonusElemento));          
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
+                        System.out.println("User 1 foi nocauteado");
                         System.out.println("ALERTA!!! User 1 troque seu monstro");
                     }else{
                         System.out.println("A vida do user 1 caiu para: " + user_1[i].getVida());
-                        System.out.println("User 1 foi nocauteado");
+                        System.out.println("User 1 foi golpeado");
                         System.out.println("Rodada finalizada");
                     }
                     break;
@@ -408,10 +417,11 @@ public class Main {
                     user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
+                        System.out.println("User 1 foi nocauteado");
                         System.out.println("ALERTA!!! User 1 troque seu monstro");
                     }else{
                         System.out.println("A vida do user 1 caiu para: " + user_1[i].getVida());
-                        System.out.println("User 1 foi nocauteado");
+                        System.out.println("User 1 foi golpeado");
                         System.out.println("Rodada finalizada");
                     }
                     break;
