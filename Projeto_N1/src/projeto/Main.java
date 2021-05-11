@@ -94,14 +94,16 @@ public class Main {
         int i=0;
         int j=0;
         
-        int monstroVivo_1 = 2; //User_1
-        int monstroVivo_2 = 2; //User2
+        int monstroVivo_1 = 3; //User_1
+        int monstroVivo_2 = 3; //User2
         
+        boolean vivo = true;
         
         
         do{ //fiz um do while pra ele nao pegar novamente o valor de i=0 e substituir i quando o monstro for trocado, mas o criterio de para do while esta errado
         
         int bonusElemento;    
+        
           
         Scanner scanner = new Scanner(System.in);
         System.out.println("User 1: Menu de Escolha!!:");
@@ -199,7 +201,7 @@ public class Main {
                     
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
-                        System.out.println("User 2 troque seu monstro");
+                        System.out.println("User 1 troque seu monstro");
                     }else{
                         System.out.println("A vida do user 2 caiu para: " + user_1[i].getVida());
                         System.out.println("Rodada finalizada");
@@ -271,7 +273,7 @@ public class Main {
                     user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_2[j].getVida() <= 0){
                         monstroVivo_2--;
-                        System.out.println("User 2 troque seu monstro");
+                        System.out.println("User 2 troque seu  monstro");
                     }else{
                         System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
                         System.out.println("Rodada finalizada");
@@ -301,7 +303,7 @@ public class Main {
                     user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_2[j].getVida() <= 0){
                         monstroVivo_2--;
-                        System.out.println("Troque o monstro");
+                        System.out.println("User 2 troque seu monstro");
                     }else{
                         System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
                         System.out.println("Rodada finalizada");
@@ -346,7 +348,7 @@ public class Main {
                     user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
-                        System.out.println("User 1 troque seu o monstro");
+                        System.out.println("User 1 troque seu  monstro");
                     }else{
                         System.out.println("A vida do user 1 caiu para: " + user_1[i].getVida());
                         System.out.println("Rodada finalizada");
@@ -417,6 +419,12 @@ public class Main {
             }
             System.out.println("Troca Efetuada: " + troca_2);
         }
-        }while(monstroVivo_1 > 0 || monstroVivo_2 > 0);
+        
+        if(monstroVivo_1 == 0 || monstroVivo_2 == 0){
+            System.out.println("Oi");
+            vivo = false;
+        }
+        
+        }while(vivo == true);
     }
 }
