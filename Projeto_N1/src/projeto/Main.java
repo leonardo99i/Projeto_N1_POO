@@ -218,10 +218,42 @@ public class Main {
             System.out.println("---------------------");
             System.out.println("Escolha a sua troca: ");
             System.out.println("---------------------");
-            System.out.println("");
+
             int troca_1 = troca.nextInt();
             switch (troca_1) {
-                case 1:
+                case 0:
+                    j = 0;
+                    user_2[0].getVida();
+                    System.out.println(user_2[j].getVida());
+                    System.out.println(user_2[j].getNomeMonstro());
+                    
+                    if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Terra".equals(user_1[i].getTipoElemento()) && "Eletricidade".equals(user_2[j].getTipoElemento()) || "Eletricidade".equals(user_1[i].getTipoElemento()) && "Terra".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else if ("Ar".equals(user_1[i].getTipoElemento()) && "Grama".equals(user_2[j].getTipoElemento()) || "Grama".equals(user_1[i].getTipoElemento()) && "Ar".equals(user_2[j].getTipoElemento())){
+                        bonusElemento = 2;
+                    }else{
+                        bonusElemento = 1;
+                    }
+                    
+                    System.out.println("User 1 ataca primeiro!!!");
+                    System.out.println("A batalha começou:");
+                    System.out.println("User 1: " + user_1[i].getNomeMonstro());
+                    System.out.println("User 2: " + user_2[j].getNomeMonstro());
+                    user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe) * bonusElemento));
+                    if(user_2[j].getVida() <= 0){
+                        monstroVivo_2--;
+                        System.out.println("User 2 foi nocauteado");
+                        System.out.println("ALERTA!!! User 2 troque seu monstro");
+                    }else{
+                        System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
+                        System.out.println("User 2 foi golpeado");
+                        System.out.println("Rodada finalizada");
+                    }
+                    break;
+                    
+                case 1:                
                     j = 1;
                     user_2[1].getVida();
                     System.out.println(user_2[1].getVida());
@@ -284,11 +316,29 @@ public class Main {
                         System.out.println("Rodada finalizada");
                     }
                     break;
+                default:System.out.println("Entrada Invalida!!!");
+                    break;
+            }
+            System.out.println("Troca Efetuada: " + troca_1);
+            System.out.println("");
+        }
+        else if(escolhaRodada_1 == 2 && escolhaRodada_2 == 1){
+            Scanner troca_ = new Scanner(System.in);
+            System.out.println("User 1: Você tem essas opções! ");
+            System.out.println("0 - Monstro " + user_1[0].getNomeMonstro());
+            System.out.println("1 - Monstro " + user_1[1].getNomeMonstro());
+            System.out.println("2 - Monstro " + user_1[2].getNomeMonstro());
+            System.out.println("---------------------");
+            System.out.println("Escolha a sua troca: ");
+            System.out.println("---------------------");
+            int troca_2 = troca_.nextInt();
+            switch (troca_2) {
+                
                 case 0:
-                    j = 0;
-                    user_2[2].getVida();
-                    System.out.println(user_2[j].getVida());
-                    System.out.println(user_2[j].getNomeMonstro());
+                    i = 0;
+                    user_1[0].getVida();
+                    System.out.println(user_1[0].getVida());
+                    System.out.println(user_1[i].getNomeMonstro());
                     
                     if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
                         bonusElemento = 2;
@@ -300,44 +350,28 @@ public class Main {
                         bonusElemento = 1;
                     }
                     
-                    System.out.println("User 1 ataca primeiro!!!");
+                    System.out.println("User 2 ataca primeiro!!!");
                     System.out.println("A batalha começou:");
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    user_2[j].setVida(user_2[j].getVida() + user_2[j].getDefesa() - user_1[i].getForca() - (user_1[i].getGolpe(escolheGolpe) * bonusElemento));
-                    if(user_2[j].getVida() <= 0){
-                        monstroVivo_2--;
-                        System.out.println("User 2 foi nocauteado");
-                        System.out.println("ALERTA!!! User 2 troque seu monstro");
+                    user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe) * bonusElemento));
+                    if(user_1[i].getVida() <= 0){
+                        monstroVivo_1--;
+                        System.out.println("User 1 foi nocauteado");
+                        System.out.println("ALERTA!!! User 1 troque seu monstro");
                     }else{
-                        System.out.println("A vida do user 2 caiu para: " + user_2[j].getVida());
-                        System.out.println("User 2 foi golpeado");
+                        System.out.println("A vida do user 1 caiu para: " + user_1[i].getVida());
+                        System.out.println("User 1 foi golpeado");
                         System.out.println("Rodada finalizada");
                     }
                     break;
-                default:System.out.println("Entrada Invalida!!!");
-                    break;
-            }
-            System.out.println("Troca Efetuada: " + troca_1);
-            System.out.println("");
-        }
-        else if(escolhaRodada_1 == 2 && escolhaRodada_2 == 1){
-            Scanner troca_ = new Scanner(System.in);
-            System.out.println("User 1: Você tem essas opções! ");
-            System.out.println("o - Monstro " + user_1[0].getNomeMonstro());
-            System.out.println("1 - Monstro " + user_1[1].getNomeMonstro());
-            System.out.println("2 - Monstro " + user_1[2].getNomeMonstro());
-            System.out.println("---------------------");
-            System.out.println("Escolha a sua troca: ");
-            System.out.println("---------------------");
-            System.out.println("");
-            int troca_2 = troca_.nextInt();
-            switch (troca_2) {
+                    
                 case 1:
                     i = 1;
                     user_1[1].getVida();
                     System.out.println(user_1[1].getVida());
                     System.out.println(user_1[i].getNomeMonstro());
+                    System.out.println("");
                     
                     if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
                         bonusElemento = 2;
@@ -384,37 +418,6 @@ public class Main {
                     System.out.println("User 1: " + user_1[i].getNomeMonstro());
                     System.out.println("User 2: " + user_2[j].getNomeMonstro());
                     user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe) * bonusElemento));          
-                    if(user_1[i].getVida() <= 0){
-                        monstroVivo_1--;
-                        System.out.println("User 1 foi nocauteado");
-                        System.out.println("ALERTA!!! User 1 troque seu monstro");
-                    }else{
-                        System.out.println("A vida do user 1 caiu para: " + user_1[i].getVida());
-                        System.out.println("User 1 foi golpeado");
-                        System.out.println("Rodada finalizada");
-                    }
-                    break;
-                case 0:
-                    i = 0;
-                    user_1[0].getVida();
-                    System.out.println(user_1[0].getVida());
-                    System.out.println(user_1[i].getNomeMonstro());
-                    
-                    if("Água".equals(user_1[i].getTipoElemento()) && "Fogo".equals(user_2[j].getTipoElemento()) || "Fogo".equals(user_1[i].getTipoElemento()) && "Água".equals(user_2[j].getTipoElemento())){
-                        bonusElemento = 2;
-                    }else if ("Terra".equals(user_1[i].getTipoElemento()) && "Eletricidade".equals(user_2[j].getTipoElemento()) || "Eletricidade".equals(user_1[i].getTipoElemento()) && "Terra".equals(user_2[j].getTipoElemento())){
-                        bonusElemento = 2;
-                    }else if ("Ar".equals(user_1[i].getTipoElemento()) && "Grama".equals(user_2[j].getTipoElemento()) || "Grama".equals(user_1[i].getTipoElemento()) && "Ar".equals(user_2[j].getTipoElemento())){
-                        bonusElemento = 2;
-                    }else{
-                        bonusElemento = 1;
-                    }
-                    
-                    System.out.println("User 2 ataca primeiro!!!");
-                    System.out.println("A batalha começou:");
-                    System.out.println("User 1: " + user_1[i].getNomeMonstro());
-                    System.out.println("User 2: " + user_2[j].getNomeMonstro());
-                    user_1[i].setVida(user_1[i].getVida() + user_1[i].getDefesa() - user_2[j].getForca() - (user_2[j].getGolpe(escolheGolpe) * bonusElemento));
                     if(user_1[i].getVida() <= 0){
                         monstroVivo_1--;
                         System.out.println("User 1 foi nocauteado");
